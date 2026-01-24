@@ -54,7 +54,6 @@ buscaResultados.addEventListener('click', function (e) {
     }
 });
 
-
 const carrossels = document.querySelectorAll('.container-slide');
 carrossels.forEach(container => {
     const slide = container.querySelector('#slider');
