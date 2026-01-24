@@ -1,0 +1,285 @@
+body {
+    width: 100%;
+    min-height: 100vh;
+    padding: 0%;
+    place-items: center;
+    margin: 0;
+}
+
+/*HEADER*/
+header {
+    height: 145px;
+    width: 100%;
+    margin: 0%;
+    padding: 0%;
+    background-color: #111317;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+#logo{
+    display: flex;
+    align-items: center;
+}
+#logo img {
+    height: 70px;
+    width: 160px;
+    display: flex;
+    align-self:center;
+}
+
+/*FIM HEADER*/
+
+
+.container{
+    width:70%;
+    min-height: 100vh;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.favorites-box{
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap ;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.produto {
+    width: 25%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #d6e0ea;
+    box-shadow: 0 5px 9px rgba(0, 0, 0, 0.2);
+}
+.icons {
+    height: 35px;
+    width: 30px;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    cursor: pointer;
+}
+
+.fav_heart{
+    width: 25px;
+    height: 25px;
+    display: flex;
+    margin-bottom: 10px;
+    justify-self: left;
+    cursor: pointer;
+}
+
+.produtos{
+    width: 90%;
+    height: 170px;
+}
+
+.produtos img{
+    width: 100%;
+    height: 100%;
+}
+
+
+h3{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: wrap;
+    margin: 0px;
+}
+h2{
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: wrap;
+    margin: 0px;
+}
+
+.content {
+    width: 100%;
+    display: flex;
+    justify-self: center;
+    justify-content: space-between;
+}
+
+.compras {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    filter: invert(100%);
+    cursor: pointer;
+}
+
+/*Footer*/
+
+footer {
+    width: 100%;
+    background-color: #111317;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-info img {
+    max-width: 100%;
+    width: 130px;
+    height: auto;
+  }
+  
+
+/* Container do footer */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilo das seções dentro do footer */
+.footer-info, .footer-links, .footer-social {
+    width: 30%;
+}
+
+.footer-info image {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.footer-info p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-links h3, .footer-social h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.footer-links ul, .footer-social ul {
+    list-style: none;
+    display: block;
+}
+
+.footer-links li, .footer-social li {
+    margin-bottom: 8px;
+}
+
+.footer-links a, .footer-social a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-links a:hover, .footer-social a:hover {
+    text-decoration: underline;
+}
+
+/* Estilo para o rodapé inferior */
+.footer-bottom {
+    text-align: center;
+    background-color: #333;
+    padding: 15px 0;
+}
+
+.footer-bottom p {
+    font-size: 14px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-info, .footer-links, .footer-social {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/*RESPONSIVIDADE*/
+
+@media (max-width:1024px) {
+
+    .container{
+        justify-content: center;
+    }
+
+    .favorites-box{
+        width: 100%;
+        height: 30%;
+        gap: 10px;
+    }
+    .compras{
+        width: 35px;
+        height: 35px;
+    }
+    p{
+        font-size: 0.9em;
+    }
+    h1{
+        font-size: 20px;
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .container{
+        width: 70%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .favorites-box{
+        width: 100%;
+        height: 20%;
+        gap: 10px;
+    }
+    .compras{
+        width: 30px;
+        height: 30px;
+    }
+    h1{
+        font-size: 15px;
+    }
+    .produtos{
+        height: 100%;
+    }
+    
+}
+
+@media (max-width: 425px) {
+    .container{
+        flex-wrap: wrap;
+    }
+    .favorites-box{
+        width: 90%;
+        height: 20%;
+    }
+    p{
+        font-size: 0.8em;
+    }
+    h1{
+        font-size: 15px;
+    }
+    .compras{
+        width: 30px;
+        height: 30px;
+    }
+    
+}
