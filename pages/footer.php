@@ -10,10 +10,10 @@
 
     <!-- Conteúdo da página -->
 
-    <footer>
+    <footer class="footer-color">
         <div class="footer-container">
             <div class="footer-info">
-                <img src="LogoBrancareal.png" alt="" sizes="" srcset="">
+                <img src="/eixoauto/eixoautopi/img/Icons/LogoBrancareal.png" alt="" sizes="" srcset="">
                 <p>Seu destino para peças e acessórios automotivos de qualidade.</p>
                 <p>Endereço: Rua Paineiras, 1300 - Contagem, Minas Gerais</p>
             </div>
@@ -39,6 +39,10 @@
             <p>&copy; 2025 Loja de Autopeças - Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <!-- SCRIPT -->
+    <script src="/eixoauto/eixoautopi/js/variaveis.js"></script>
+    <!--  -->
 
 </body>
 </html>

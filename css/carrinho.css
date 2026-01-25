@@ -18,7 +18,6 @@ header {
     width: 100%;
     margin: 0%;
     padding: 0%;
-    background-color: #111317;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,7 +55,6 @@ li:hover{
 #carrinho {
     width: 70%;
     min-height: 100%;
-    margin-top: 70px;
     margin-bottom: 110px;
     display: flex;
     justify-self: center;

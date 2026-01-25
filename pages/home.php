@@ -12,7 +12,7 @@
 <body>
 
     <!-- Header (Logo, Icons, Input) -->
-    <header>
+    <header class="header-color">
         <nav>
             <div id="logo">
                 <img src="/eixoauto/eixoautopi/img/Icons/LogoBrancareal.png" alt="Logo EixoAuto">
@@ -133,7 +133,7 @@
 
     <!-- Footer -->
      
-    <footer>
+    <footer class="footer-color">
         <div class="footer-container">
             <div class="footer-info">
                 <img src="/eixoauto/eixoautopi/img/Icons/LogoBrancareal.png" alt="" sizes="" srcset="">
@@ -168,6 +168,8 @@
     <script src="/eixoauto/eixoautopi/js/favoritos.js"></script>
     <script src="/eixoauto/eixoautopi/js/index.js"></script>
     <script src="/eixoauto/eixoautopi/js/compras.js"></script>
+    <script src="/eixoauto/eixoautopi/js/variaveis.js"></script>
+    <!--  -->
 
 </body>
 

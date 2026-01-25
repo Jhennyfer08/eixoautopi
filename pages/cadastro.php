@@ -76,9 +76,9 @@ if(isset($_POST['submit'])){
 
 <body>
 
-    <header>
+    <header >
         <div id="logo">
-            <img src="/eixoauto/eixoautopi/img/Icons/LogoBrancareal.png.png" alt="Logo da empresa Eixo">
+            <img src="/eixoauto/eixoautopi/img/Icons/LogoBrancareal.png" alt="Logo da empresa Eixo">
         </div>
     </header>
 
@@ -153,7 +153,11 @@ if(isset($_POST['submit'])){
             </button >
         </form>
     </div>
+
+    <!-- SCRIPTS -->
     <script src="/eixoauto/eixoautopi/js/cadastro.js"></script>
+    <script src="/eixoauto/eixoautopi/js/variaveis.js"></script>
+    <!--  -->
 </body>
 
 </html>

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="header-color">
         <div id="logo">
             <img src="/eixoauto/eixoautopi/img/Icons/LogoBrancareal.png" alt="Logo EixoAutopeças">
         </div>
@@ -25,9 +25,12 @@
             <button class="btn" id="cadastro"> Cadastro </button>
         </a>
     </div>
-    
+
     <div class="background-img"><img src="/eixoauto/eixoautopi/img/Propagandas/MercedesActrossBg.png" alt=""></div>
 
+    <!-- SCRIPTS -->
+    <script src="/eixoauto/eixoautopi/js/variaveis.js"></script>
+    <!--  -->
 </body>
 
 </html>

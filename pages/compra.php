@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <header>
+  <header class="header-color">
     <div id="logo">
       <a href="/eixoauto/eixoautopi/pages/home.php">
         <img src="/eixoauto/eixoautopi/img/Icons/LogoBrancareal.png" alt="Logo da empresa Eixo">
@@ -26,7 +26,7 @@
       $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 
       if ($id > 0) {
-          $sql = "SELECT 
+        $sql = "SELECT 
             p.Pro_Nome, 
             p.Pro_Preco, 
             p.Pro_Descricao,
@@ -41,50 +41,50 @@
           WHERE p.Pro_ID = $id
           LIMIT 1";
 
-          $result = $conexao->query($sql);
+        $result = $conexao->query($sql);
 
-          if ($result && $result->num_rows > 0) {
-              $row = $result->fetch_assoc();
-              $codigoOriginal = $row['Pro_CodigoOriginal'];
-              echo '<div class="product-section">';
+        if ($result && $result->num_rows > 0) {
+          $row = $result->fetch_assoc();
+          $codigoOriginal = $row['Pro_CodigoOriginal'];
+          echo '<div class="product-section">';
 
-                // imagem do produto
-                if (!empty($row['Pro_Imagem'])) {
-                  echo '<img class="img-product" src="/eixoauto/eixoautopi/' . htmlspecialchars($row['Pro_Imagem']) . '" alt="' . htmlspecialchars($row['Pro_Nome']) . '">';
-                } else {
-                  echo '<img class="img-product" src="/eixoauto/eixoautopi/img/Icons/heart-checked.png" alt="Imagem padrão">';
-                }
+          // imagem do produto
+          if (!empty($row['Pro_Imagem'])) {
+            echo '<img class="img-product" src="/eixoauto/eixoautopi/' . htmlspecialchars($row['Pro_Imagem']) . '" alt="' . htmlspecialchars($row['Pro_Nome']) . '">';
+          } else {
+            echo '<img class="img-product" src="/eixoauto/eixoautopi/img/Icons/heart-checked.png" alt="Imagem padrão">';
+          }
 
-                // nome e preço
-                echo '<div class="prize">';
-                echo '<a href="#">' . htmlspecialchars($row['Pro_Nome']) . '</a>';
-                echo '<h1>R$ ' . number_format($row['Pro_Preco'], 2, ',', '.') . '</h1>';
-                echo '</div>';
+          // nome e preço
+          echo '<div class="prize">';
+          echo '<a href="#">' . htmlspecialchars($row['Pro_Nome']) . '</a>';
+          echo '<h1>R$ ' . number_format($row['Pro_Preco'], 2, ',', '.') . '</h1>';
+          echo '</div>';
 
-                // logo + link do site
-                echo '<div class="store-link">';
-                if (!empty($row['logo'])) {
-                  echo '<a href="' . htmlspecialchars($row['site']) . '" target="_blank">
+          // logo + link do site
+          echo '<div class="store-link">';
+          if (!empty($row['logo'])) {
+            echo '<a href="' . htmlspecialchars($row['site']) . '" target="_blank">
                           <img src="/eixoauto/eixoautopi/' . htmlspecialchars($row['logo']) . '" alt="Logo do Fornecedor" class="logo-fornecedor">
                         </a>';
-                } else {
-                  echo htmlspecialchars($row['fornecedor']);
-                }
-                echo '<a href="' . htmlspecialchars($row['Pro_LinkProduto']) . '" target="_blank"><button>Comprar na Loja</button></a>';
-                echo '</div>';
-
-                // descrição
-                echo '<div class="desc">';
-                echo '<h3>Descrição</h3>';
-                echo '<p>' . htmlspecialchars($row['Pro_Descricao']) . '</p>';
-                echo '</div>';
-
-              echo '</div>'; // fim product-section
           } else {
-              echo "<p>Produto não encontrado.</p>";
+            echo htmlspecialchars($row['fornecedor']);
           }
+          echo '<a href="' . htmlspecialchars($row['Pro_LinkProduto']) . '" target="_blank"><button>Comprar na Loja</button></a>';
+          echo '</div>';
+
+          // descrição
+          echo '<div class="desc">';
+          echo '<h3>Descrição</h3>';
+          echo '<p>' . htmlspecialchars($row['Pro_Descricao']) . '</p>';
+          echo '</div>';
+
+          echo '</div>'; // fim product-section
+        } else {
+          echo "<p>Produto não encontrado.</p>";
+        }
       } else {
-          echo "<p>ID inválido.</p>";
+        echo "<p>ID inválido.</p>";
       }
       ?>
     </div>
@@ -93,9 +93,9 @@
   <div class="comparison">
     <?php
     // NÃO precisa incluir config.php de novo!
-
+    
     if (!empty($codigoOriginal)) {
-        $sql = "SELECT 
+      $sql = "SELECT 
               p.Pro_ID,
               p.Pro_Nome, 
               p.Pro_Preco, 
@@ -110,40 +110,40 @@
               AND p.Pro_ID != $id
             LIMIT 15";
 
-        $result = $conexao->query($sql);
+      $result = $conexao->query($sql);
 
-        if ($result && $result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-            echo '<div class="product-section">';
-            // imagem do produto
-            if (!empty($row['Pro_Imagem'])) {
-              echo '<img class="img-product" src="/eixoauto/eixoautopi/' . htmlspecialchars($row['Pro_Imagem']) . '" alt="' . htmlspecialchars($row['Pro_Nome']) . '">';
-            } else {
-              echo '<img class="img-product" src="/eixoauto/eixoautopi/img/Icons/heart-checked.png" alt="Imagem padrão">';
-            }
-            // nome e preço
-            echo '<div class="prize">';
-            echo '<a href="#">' . htmlspecialchars($row['Pro_Nome']) . '</a>';
-            echo '<h1>R$ ' . number_format($row['Pro_Preco'], 2, ',', '.') . '</h1>';
-            echo '</div>';
-            // logo + link do site
-            echo '<div class="store-link">';
-            if (!empty($row['logo'])) {
-              echo '<a href="' . htmlspecialchars($row['site']) . '" target="_blank">
+      if ($result && $result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+          echo '<div class="product-section">';
+          // imagem do produto
+          if (!empty($row['Pro_Imagem'])) {
+            echo '<img class="img-product" src="/eixoauto/eixoautopi/' . htmlspecialchars($row['Pro_Imagem']) . '" alt="' . htmlspecialchars($row['Pro_Nome']) . '">';
+          } else {
+            echo '<img class="img-product" src="/eixoauto/eixoautopi/img/Icons/heart-checked.png" alt="Imagem padrão">';
+          }
+          // nome e preço
+          echo '<div class="prize">';
+          echo '<a href="#">' . htmlspecialchars($row['Pro_Nome']) . '</a>';
+          echo '<h1>R$ ' . number_format($row['Pro_Preco'], 2, ',', '.') . '</h1>';
+          echo '</div>';
+          // logo + link do site
+          echo '<div class="store-link">';
+          if (!empty($row['logo'])) {
+            echo '<a href="' . htmlspecialchars($row['site']) . '" target="_blank">
                       <img src="/eixoauto/eixoautopi/' . htmlspecialchars($row['logo']) . '" alt="Logo do Fornecedor" class="logo-fornecedor">
                     </a>';
-            } else {
-              echo htmlspecialchars($row['fornecedor']);
-            }
-            echo '<a href="' . htmlspecialchars($row['Pro_LinkProduto']) . '" target="_blank"><button>Comprar na Loja</button></a>';
-            echo '</div>';
-            echo '</div>'; // fim product-section
+          } else {
+            echo htmlspecialchars($row['fornecedor']);
           }
-        } else {
-          echo '<p>Nenhuma oferta encontrada.</p>';
+          echo '<a href="' . htmlspecialchars($row['Pro_LinkProduto']) . '" target="_blank"><button>Comprar na Loja</button></a>';
+          echo '</div>';
+          echo '</div>'; // fim product-section
         }
-    } else {
+      } else {
         echo '<p>Nenhuma oferta encontrada.</p>';
+      }
+    } else {
+      echo '<p>Nenhuma oferta encontrada.</p>';
     }
     ?>
   </div>
@@ -158,15 +158,19 @@
   <script>
     // Exemplo de redirecionamento com ID
     function apresentar(produto) {
-        if (!produto || !produto.id) {
-            console.error("Produto ou ID do produto não encontrado.");
-            return;
-        }
+      if (!produto || !produto.id) {
+        console.error("Produto ou ID do produto não encontrado.");
+        return;
+      }
 
-        
-        window.location.href = `/eixoauto/eixoautopi/pages/compra.php?id=${produto.id}`;
+
+      window.location.href = `/eixoauto/eixoautopi/pages/compra.php?id=${produto.id}`;
     }
   </script>
+
+  <!-- SCRIPTS -->
+  <script src="/eixoauto/eixoautopi/js/variaveis.js"></script>
+  <!--  -->
 </body>
 
 </html>

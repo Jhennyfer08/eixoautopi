@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="header-color">
         <div id="logo">
             <a href="/eixoauto/eixoautopi/pages/home.php"><img src="/eixoauto/eixoautopi/img//Icons/LogoBrancareal.png" alt="Logo da empresa `Eixo`"></a>
         </div>
@@ -60,6 +60,8 @@
     <script src="/eixoauto/eixoautopi/js/favoritos.js"></script>
     <script src="/eixoauto/eixoautopi/js/index.js"></script>
     <script src="/eixoauto/eixoautopi/js/carrinho.js"></script>
+    <script src="/eixoauto/eixoautopi/js/variaveis.js"></script>
+    <!--  -->
 
 </body>
 

@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
             $_SESSION['id'] = $id;
             $_SESSION['cnpj'] = $db_cnpj;
             header("Location: home.php");
-            exit; 
+            exit;
         } else {
             $_SESSION['erro'] = "Senha incorreta!";
             header("Location: login.php");
@@ -36,36 +36,44 @@ if (isset($_POST['submit'])) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="/eixoauto/eixoautopi/css/login.css">
 </head>
+
 <body>
-    <header>
-        <div>
-            <img id="logo" src ="/eixoauto/eixoautopi/img/Icons/LogoBrancareal.png.png" alt="">
+    <header class="header-color">
+        <div id="logo">
+            <img src="/eixoauto/eixoautopi/img/Icons/LogoBrancareal.png" alt="Logo EixoAutopeças">
         </div>
     </header>
-    
+
     <div class="container">
         <form action="login.php" method="POST">
             <h2>Login</h2>
             <ul class="input-group">
                 <label for="Ins_CNPJ">CNPJ:</label>
                 <input type="text" id="Ins_CNPJ" name="Ins_CNPJ" required>
-            <ul>
-            <ul class="input-group">
-                <label for="Cli_Senha">Senha:</label>
-                <input type="password" id="Cli_Senha" name="Cli_Senha" required>
-            <ul>
-            <button type="submit" name="submit">Entrar</button>
+                <ul>
+                    <ul class="input-group">
+                        <label for="Cli_Senha">Senha:</label>
+                        <input type="password" id="Cli_Senha" name="Cli_Senha" required>
+                        <ul>
+                            <button type="submit" name="submit">Entrar</button>
 
-            <nav id="signup-link">
-             <p>Ainda não tem uma conta? <a href="/eixoauto/eixoautopi/pages/cadastro.php">Cadastre-se</a></p>
-            </nav>
+                            <nav id="signup-link">
+                                <p>Ainda não tem uma conta? <a
+                                        href="/eixoauto/eixoautopi/pages/cadastro.php">Cadastre-se</a></p>
+                            </nav>
         </form>
     </div>
+
+    <!-- SCRIPTS -->
+    <script src="/eixoauto/eixoautopi/js/variaveis.js"></script>
+    <!--  -->
 </body>
+
 </html>
