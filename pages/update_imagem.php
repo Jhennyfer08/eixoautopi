@@ -51,4 +51,4 @@ foreach ($arquivosImagens as $arquivo) {
 }
 
 $conn->close();
-?>
+

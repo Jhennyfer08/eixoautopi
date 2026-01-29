@@ -40,11 +40,10 @@ if ($result) {
         }
 
         // Formata preço no padrão BR
-        $row['preco'] = "R$ " . number_format($row['preco'], 2, ',', '.');
+        $row['preco'] = "R$ " . number_format($row['preco'], decimals: 2, decimal_separator: ',', thousands_separator: '.');
 
         $produtos[] = $row;
     }
 }
 
 echo json_encode($produtos, JSON_UNESCAPED_UNICODE);
-?>

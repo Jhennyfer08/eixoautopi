@@ -19,4 +19,4 @@ if ($result) {
     }
 }
 echo json_encode($ofertas, JSON_UNESCAPED_UNICODE);
-?>
+

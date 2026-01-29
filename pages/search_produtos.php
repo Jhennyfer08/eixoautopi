@@ -5,7 +5,8 @@ header('Content-Type: application/json; charset=utf-8');
 $termo = isset($_GET['q']) ? $_GET['q'] : '';
 $produtos = [];
 
-if ($stmt = $conexao->prepare("SELECT 
+if (
+    $stmt = $conexao->prepare("SELECT 
     Pro_ID as id, 
     Pro_Nome as nome, 
     Pro_Descricao as descricao, 
@@ -14,7 +15,8 @@ if ($stmt = $conexao->prepare("SELECT
     Pro_LinkProduto as link, 
     Pro_CodigoOriginal as codigo 
 FROM tb_produto 
-WHERE Pro_Nome LIKE ? OR Pro_Descricao LIKE ? OR Pro_CodigoOriginal LIKE ?")) {
+WHERE Pro_Nome LIKE ? OR Pro_Descricao LIKE ? OR Pro_CodigoOriginal LIKE ?")
+) {
 
     $likeTerm = "%$termo%";
     $stmt->bind_param("sss", $likeTerm, $likeTerm, $likeTerm);
@@ -35,4 +37,3 @@ WHERE Pro_Nome LIKE ? OR Pro_Descricao LIKE ? OR Pro_CodigoOriginal LIKE ?")) {
         'db_error' => $conexao->error
     ], JSON_UNESCAPED_UNICODE);
 }
-?>

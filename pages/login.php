@@ -1,6 +1,7 @@
 <?php
+require_once('config.php');
 session_start();
-include_once('config.php');
+
 
 if (isset($_POST['submit'])) {
     $cnpj = $_POST['Ins_CNPJ'];
@@ -11,12 +12,13 @@ if (isset($_POST['submit'])) {
     $login->bind_param("s", $cnpj);
     $login->execute();
     $login->store_result();
-    $login->bind_result($id, $db_cnpj, $db_senha);
+    $login->bind_result($id, $db_cnpj, $senha);
 
     if ($login->num_rows > 0) {
         $login->fetch();
 
-        if (password_verify($senha, $db_senha)) {
+        if (password_verify($senha, $senha)) {
+            $_SESSION['logado'] = true;
             $_SESSION['id'] = $id;
             $_SESSION['cnpj'] = $db_cnpj;
             header("Location: home.php");
@@ -52,7 +54,7 @@ if (isset($_POST['submit'])) {
     </header>
 
     <div class="container">
-        <form action="login.php" method="POST">
+        <form action="home.php" method="POST">
             <h2>Login</h2>
             <ul class="input-group">
                 <label for="Ins_CNPJ">CNPJ:</label>
